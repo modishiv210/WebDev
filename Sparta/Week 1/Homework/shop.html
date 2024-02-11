@@ -7,28 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" type="text/css" href = "style.css">
-    
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <title>Shopping Mall</title>
 </head>
 
 <body>
+  <img class="image" src="https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61NLY6jP6mL._SX679_.jpg" width="250" height="250" alt="Image">
   <div class="heading">
-    <img src="https://m.media-amazon.com/images/W/MEDIAX_849526-T1/images/I/61NLY6jP6mL._SX679_.jpg" width="250" height="250" alt="Image">
-    <h1>Sparta Candles</h1> <h2>Price: $3 each</h2>
-    <h3>A candle that doesn't smell like burning money!</h3>
+  <h1>Sparta Candles</h1>
+  <h2>Price: $3 each</h2>
+  <h3>A candle that doesn't smell like burning money!</h3>
   </div>
   <form id="form">
     <div class="row">
@@ -44,7 +35,6 @@
     <div class="row">
       <div class="col">
         <label for="quantity">Quantity:</label>
-        <!--input type="number" id="quantity" name="quantity" required-->
         <select id="quantity" name="quantity" required>
           <option value="">Select...</option>
           <option value="1">1</option>
@@ -74,8 +64,8 @@
     </div>
     <div class="row">
       <div class="col">
-        <h1 id="shop">Shop Now!!</h1>
-        <button type="submit">Order</button>
+        <h1>Shop Now!!</h1>
+        <button class="button" type="submit">Order</button>
       </div>
     </div>
   </form>
