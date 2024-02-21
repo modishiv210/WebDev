@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SCC | jQuery Quiz</title>
+    <title>jQuery Quiz</title>
 
    <!-- importing JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -27,11 +27,19 @@
         }
 
         function q2() {
-	          // 1. Receive the input value of input-q2
+	        // 1. Receive the input value of input-q2
             // 2. If there is '@' in the input value (Hint! Try using 'includes')
             // 3. rtanny@gmail.com -> extract 'gmail'
             // 4. Alert the domain value
             // 5. Alert a message if the input value is not an email
+            let input = $('#input-q2').val();
+            if(input == "")
+                alert("Insert any value!");
+            else
+                if(input.includes('@'))
+                    alert(input.split('@')[1].split('.')[0]);
+                else
+                    alert("Enter a vaild email!");
         }
 
         function q3() {
@@ -40,12 +48,19 @@
             // 3. Using the input value, create a list for names-q3 (Remember to use backticks!)
             // 4. Insert temp_html to names-q3
             let userInput = $('#input-q3').val();
-            let temp_html = `<li> ${userInput} </li>`
-            $('#names-q3').append(temp_html);
+            if(userInput == ""){
+                alert("Insert any value!")
+            }
+            else{
+                let temp_html = `<li> ${userInput} </li>`
+                $('#names-q3').append(temp_html);
+            }
+
         }
 
         function q3_delete() {
             // 1. Delete all the lists in names-q3
+            $('#names-q3').empty();
         }
 
     </script>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seoul AQI</title>
+
+    <!-- import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        div.question-box {
+            margin: 10px 0 20px 0;
+        }
+
+        .bad {
+            color: red;
+        }
+    </style>
+
+    <script>
+        function q1() {
+            $('#index-q1').empty()
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/en/global_air/seoul",
+                data: {},
+                success: function(response){
+                    let dates = response['data']['forecast'];
+                    for (let i = 0; i < dates.length; i++) {
+                        let day = dates[i]['day']
+                        let avg = dates[i]['avg']
+                        
+                        let temp_html = ``
+                        if (avg > 70) {
+                            temp_html = `<li class="bad">${day} : ${avg}</li>`
+                        } else {
+                            temp_html = `<li>${day} : ${avg}</li>`
+                        }
+                        $('#index-q1').append(temp_html)
+                    }
+                }
+            })
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Air Quality Index in Seoul</h1>
+
+    <hr />
+
+    <div class="question-box">
+        <h2>1. Using Seoul's OpenAPI (real-time air pollution rate)</h2>
+        <p>Please indicate the air pollution rates in Seoul</p>
+        <p>Click Update button to know AQI in Seoul</p>
+        <button onclick="q1()">update</button>
+        <ul id="index-q1">
+            <li>2021-02-24 : 32</li>
+            <li>2021-02-25 : 15</li>
+            <li>2021-02-26 : 57</li>
+            <li>2021-02-27 : 70</li>
+        </ul>
+    </div>
+</body>
+
+</html>
