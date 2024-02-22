@@ -13,7 +13,7 @@ a {
     padding: 0;
     text-decoration: none;
 }
-/* i phone pro 12 */
+
 @media screen and (max-width: 390px) {
     .gnb{
         width: 550px;
@@ -43,6 +43,8 @@ a {
 }
 
 
+
+/* codes for mobile phone*/
 @media screen and (min-width:480px) and (max-width:767px) {
     .gnb>.contents {
         width: 700px;
@@ -143,3 +145,4 @@ a {
         margin-left: 15px;
     }
 };
+
