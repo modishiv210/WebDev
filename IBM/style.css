@@ -24,7 +24,7 @@ body{
         padding-right: 1cm;
     }
 
-    .navbutton{
+    .navdiv button{
         color: lightgray;
         background-color: #483355;
         margin: 10px;
@@ -34,7 +34,7 @@ body{
         text-decoration: none;
     }
 
-    .navbutton:hover{
+    .navdiv button:hover{
         color: white;
         background-color: #382742;
         font-weight: bolder;
@@ -60,6 +60,11 @@ body{
         color: black;
         font-size: 17px;
         text-align: center;
+    }
+
+    fieldset, aside{
+        margin-top: 10px;
+        margin-right: 20px;
     }
 
     button{
