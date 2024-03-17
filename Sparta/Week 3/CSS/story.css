@@ -21,6 +21,7 @@
 
 .story>div {
     font-size: 8px;
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,7 +29,6 @@
 }
 
 .story-1 {
-    overflow-x: auto;
     display: flex;
     flex-direction: row;
 
