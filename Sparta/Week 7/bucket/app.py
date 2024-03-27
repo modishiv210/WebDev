@@ -1,8 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 
 from pymongo import MongoClient
-client = MongoClient('Your mongoDB Atlas URL here')
-db = client.dbhomework
+from pymongo.server_api import ServerApi
+
+uri = "mongodb+srv://shivmodi21:shivmodi@cluster0.p8k9ttj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+client = MongoClient(uri, server_api=ServerApi('1'))
+db = client.sparta
 
 app = Flask(__name__)
 
