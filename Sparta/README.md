@@ -12,3 +12,4 @@ Week 4: https://shivmodi21.medium.com/week-4-sparta-42b7af6132be
 
 Week 5: https://shivmodi21.medium.com/week-5-sparta-fdda6e385684
 
+Week 6: https://shivmodi21.medium.com/week-6-sparta-5170242ab4c4
