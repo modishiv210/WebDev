@@ -77,20 +77,41 @@
                 }
             });
         }
-        function save_order() {
-            let name = $('#name').val();
-            let address = $('#address').val();
-            let size = $('#size').val();
+        function save_order(name, address, size) {
+            $('#order-info').submit(function(event) {
+                event.preventDefault(); // Prevent form submission
 
-            $.ajax({
-                type: 'POST',
-                url: '/mars',
-                data: { 'name_give':name, 'address_give':address, 'size_give':size },
-                success: function (response) {
-                    alert(response['msg']);
-                    window.location.reload();
+                // Get form values
+                var name = $('#name').val().trim();
+                var address = $('#address').val().trim();
+                var size = $('#size').val().trim();
+
+                // Check if any field is empty
+                var emptyFields = [];
+                if (name === '') {
+                    emptyFields.push('Name');
+                }
+                if (address === '') {
+                    emptyFields.push('Address');
+                }
+                if (size === '') {
+                    emptyFields.push('Size');
+                }
+
+                // Show alert or navigation based on empty fields
+                if (emptyFields.length == 0) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/mars',
+                        data: { 'name_give':name, 'address_give':address, 'size_give':size },
+                        success: function (response) {
+                            alert(response['msg']);
+                            window.location.reload();
+                        }
+                    });
                 }
             });
+            
         }
     </script>
 </head>
@@ -103,28 +124,28 @@
             Did you know you could buy Martian land?<br/>
             This chance won't come again!
         </p>
-        <div class="order-info">
+        <form id="order-info">
             <div class="input-group mb-3">
                 <span class="input-group-text">Name</span>
-                <input id="name" type="text" class="form-control">
+                <input id="name" type="text" class="form-control" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Address</span>
-                <input id="address" type="text" class="form-control">
+                <input id="address" type="text" class="form-control" required>
             </div>
             <div class="input-group mb-3">
                 <label class="input-group-text" for="size">Acres</label>
-                <select class="form-select" id="size">
-                  <option selected>-- Select acreage --</option>
+                <select class="form-select" id="size" required>
+                  <option value="">-- Select acreage --</option>
                   <option value="10">10 acres</option>
                   <option value="20">20 acres</option>
                   <option value="30">30 acres</option>
                   <option value="40">40 acres</option>
                   <option value="50">50 acres</option>
                 </select>
-              </div>
-              <button onclick="save_order()" type="button" class="btn btn-warning mybtn">Order</button>
-        </div>
+            </div>
+            <button type="submit" onclick="save_order()" class="btn btn-warning mybtn">Order</button>
+        </form>
         <table class="table">
             <thead>
               <tr>

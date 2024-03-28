@@ -123,15 +123,21 @@
         }
         function save_bucket() {
             let bucket = $('#bucket').val();
-            $.ajax({
-                type: "POST",
-                url: "/bucket",
-                data: {'bucket_give': bucket},
-                success: function (response) {
-                    alert(response["msg"])
-                    window.location.reload();
-                }
-            });
+
+            if (bucket === ""){
+                alert('Please Fill Item!');
+            }
+            else{
+                $.ajax({
+                    type: "POST",
+                    url: "/bucket",
+                    data: {'bucket_give': bucket},
+                    success: function (response) {
+                        alert(response["msg"])
+                        window.location.reload();
+                    }
+                });
+            }
         }
         function done_bucket(num) {
             $.ajax({
@@ -164,7 +170,7 @@
     </div>
     <div class="mybox">
         <div class="mybucket">
-            <input id="bucket" class="form-control" type="text" placeholder="Enter your bucket list item here">
+            <input id="bucket" class="form-control" type="text" placeholder="Enter your bucket list item here" required>
             <button onclick="save_bucket()" type="button" class="btn btn-outline-primary">Save</button>
         </div>
     </div>
